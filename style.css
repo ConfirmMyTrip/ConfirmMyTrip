@@ -46,12 +46,22 @@ body {
   max-width: 400px;
 }
 
-/* Hero & search */
+/* Hero */
 .hero {
   background: linear-gradient(135deg, #1E2A78, #E30613);
   color: white;
   text-align: center;
 }
+
+/* Landing Page */
+#landingPage {
+  background: linear-gradient(135deg, #1E2A78, #E30613);
+  border-radius: 12px;
+  color: white;
+  margin-top: 30px;
+}
+
+/* Search box */
 .search-box {
   max-width: 750px;
   margin: -40px auto 40px auto;
