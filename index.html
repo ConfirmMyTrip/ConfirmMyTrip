@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +14,7 @@
   <!-- Splash Screen -->
   <div id="splash" class="splash-screen d-flex flex-column justify-content-center align-items-center text-center">
     <img src="https://i.ibb.co/XZvNBmjp/confirmmytrip-logo-jpg.jpg" alt="Logo" class="splash-logo mb-3" />
-    <h2 class="text-white splash-quote">"Your trusted partner for flights and buses!"</h2>
+    <h2 class="text-white splash-quote">"Your Trusted partner for all your Travel Bookings!"</h2>
   </div>
 
   <!-- Login Section -->
@@ -21,7 +23,6 @@
       <img src="https://i.ibb.co/XZvNBmjp/confirmmytrip-logo-jpg.jpg" alt="Logo" class="mb-3" height="60" />
       <h4 class="mb-3">Welcome to <span style="color: #E30613;">Confirm</span><span style="color: #1E2A78;">MyTrip</span></h4>
       <button class="btn btn-main w-100 mb-3" id="continueBtn">Continue with Google</button>
-
       <div class="mb-3 text-start">
         <label for="email" class="form-label">Email</label>
         <input type="email" id="email" class="form-control" placeholder="Enter your email" required />
@@ -34,27 +35,78 @@
     </div>
   </div>
 
+  <!-- Landing Page -->
+  <div id="landingPage" class="d-none container py-5">
+    <h3 class="text-center mb-4 fw-bold text-white">Welcome to ConfirmMyTrip</h3>
+    <p class="text-center mb-5 text-light">Choose your booking type. <br><span class="text-success">Available now</span> | <span class="text-warning">Coming soon</span></p>
+    <div class="row g-4 justify-content-center">
+      <!-- Bus Booking -->
+      <div class="col-md-4">
+        <div class="card shadow h-100 text-center border-success">
+          <div class="card-body">
+            <h5 class="card-title">Bus Booking</h5>
+            <p class="text-success">Available</p>
+            <button class="btn btn-success" onclick="goToDashboard('bus')">Open</button>
+          </div>
+        </div>
+      </div>
+      <!-- Coming Soon Options -->
+      <div class="col-md-4">
+        <div class="card shadow h-100 text-center border-warning">
+          <div class="card-body">
+            <h5 class="card-title">Flight Booking</h5>
+            <p class="text-warning">Coming Soon</p>
+            <button class="btn btn-outline-secondary" disabled>Coming Soon</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow h-100 text-center border-warning">
+          <div class="card-body">
+            <h5 class="card-title">Train Booking</h5>
+            <p class="text-warning">Coming Soon</p>
+            <button class="btn btn-outline-secondary" disabled>Coming Soon</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow h-100 text-center border-warning">
+          <div class="card-body">
+            <h5 class="card-title">Hotel Booking</h5>
+            <p class="text-warning">Coming Soon</p>
+            <button class="btn btn-outline-secondary" disabled>Coming Soon</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow h-100 text-center border-warning">
+          <div class="card-body">
+            <h5 class="card-title">Tour Packages</h5>
+            <p class="text-warning">Coming Soon</p>
+            <button class="btn btn-outline-secondary" disabled>Coming Soon</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Main App -->
   <div id="mainApp" class="d-none">
     <nav class="navbar navbar-light bg-white shadow-sm px-3 py-2 border-bottom">
       <div class="container d-flex justify-content-between align-items-center">
         <a class="navbar-brand d-flex align-items-center gap-2 fs-4" href="#">
           <img src="https://i.ibb.co/XZvNBmjp/confirmmytrip-logo-jpg.jpg" alt="Logo" height="34" style="border-radius: 6px;" />
-          <span>
-            <span style="color: #E30613; font-weight: 600;">Confirm</span><span style="color: #1E2A78; font-weight: 600;">MyTrip</span>
-          </span>
+          <span><span style="color: #E30613; font-weight: 600;">Confirm</span><span style="color: #1E2A78; font-weight: 600;">MyTrip</span></span>
         </a>
         <a href="#" class="btn btn-outline-secondary" onclick="location.reload()">Logout</a>
       </div>
     </nav>
-
     <section class="hero text-center">
       <div class="container py-5">
-        <h1 class="display-5 fw-bold text-white">Book <span style="color: white;">Flights</span> & <span style="color: white;">Buses</span> Hassle-Free</h1>
-        <p class="lead text-light">Your all-in-one travel partner</p>
+        <h1 class="display-5 fw-bold text-white">Book Buses Hassle-Free</h1>
+        <p class="lead text-light">“Sometimes the best therapy is a long bus ride and good music.”</p>
       </div>
     </section>
-
     <section class="search-box">
       <form id="searchForm">
         <div class="row g-3">
@@ -64,47 +116,27 @@
           <div class="col-md-6">
             <input type="text" class="form-control" id="to" placeholder="To (e.g., Pune)" />
           </div>
-          <div class="col-md-4">
+          <div class="col-md-6">
             <input type="date" class="form-control" id="date" />
           </div>
-          <div class="col-md-4">
-            <select class="form-select" id="type">
-              <option value="bus">Bus</option>
-              <option value="flight">Flight</option>
-            </select>
-          </div>
-          <div class="col-md-4">
+          <div class="col-md-6">
             <button type="submit" class="btn btn-main w-100">Search Tickets</button>
           </div>
         </div>
       </form>
     </section>
-
     <div class="container mt-4 d-none" id="resultsSection">
       <h5 class="mb-3">Available Tickets</h5>
       <div id="ticketResults"></div>
     </div>
-
     <div class="container mt-4 d-none" id="seatSection">
       <h5 class="mb-3">Select Your Seat</h5>
-      <div class="mb-3" id="seatLayout">
-        <!-- Seats will be generated here -->
-      </div>
-      <div class="mb-3">
-        <label for="passengerName" class="form-label">Name</label>
-        <input type="text" class="form-control" id="passengerName">
-      </div>
-      <div class="mb-3">
-        <label for="passengerAge" class="form-label">Age</label>
-        <input type="number" class="form-control" id="passengerAge">
-      </div>
-      <div class="mb-3">
-        <label for="passengerEmail" class="form-label">Email</label>
-        <input type="email" class="form-control" id="passengerEmail">
-      </div>
+      <div id="seatLayout" class="mb-3 d-flex flex-wrap gap-2"></div>
+      <input class="form-control my-2" id="passengerName" placeholder="Full Name" />
+      <input class="form-control my-2" id="passengerAge" placeholder="Age" type="number" />
+      <input class="form-control my-2" id="passengerEmail" placeholder="Email" type="email" />
       <button class="btn btn-main" id="proceedBtn">Continue</button>
     </div>
-
     <div class="container mt-4 d-none" id="summarySection">
       <h5>Booking Summary</h5>
       <p><strong>Name:</strong> <span id="summaryName"></span></p>
@@ -113,7 +145,6 @@
       <p><strong>Seat No:</strong> <span id="summarySeat"></span></p>
       <button class="btn btn-main" onclick="alert('🧾 Redirecting to Razorpay...')">Proceed to Pay ₹999</button>
     </div>
-
     <footer class="bg-light text-center text-muted py-4 mt-5 border-top">
       <p class="mb-0">&copy; 2025 ConfirmMyTrip. All rights reserved.</p>
     </footer>
